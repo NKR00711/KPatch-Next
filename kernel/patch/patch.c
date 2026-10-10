@@ -64,20 +64,20 @@ static void before_rest_init(hook_fargs4_t *args, void *udata)
     if ((rc = resolve_struct())) goto out;
     log_boot("resolve_struct done: %d\n", rc);
 
-    // if ((rc = bypass_selinux())) goto out;
-    // log_boot("bypass_selinux done: %d\n", rc);
+    if ((rc = bypass_selinux())) goto out;
+    log_boot("bypass_selinux done: %d\n", rc);
 
     if ((rc = task_observer())) goto out;
     log_boot("task_observer done: %d\n", rc);
 
-    rc = supercall_install();
-    log_boot("supercall_install done: %d\n", rc);
+    // rc = supercall_install();
+    // log_boot("supercall_install done: %d\n", rc);
 
     rc = kstorage_init();
     log_boot("kstorage_init done: %d\n", rc);
 
-    // rc = kpextension_init();
-    // log_boot("kpextension_init done: %d\n", rc);
+    rc = kpextension_init();
+    log_boot("kpextension_init done: %d\n", rc);
 
     rc = resolve_pt_regs();
     log_boot("resolve_pt_regs done: %d\n", rc);
