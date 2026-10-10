@@ -76,8 +76,8 @@ static void before_rest_init(hook_fargs4_t *args, void *udata)
     rc = kstorage_init();
     log_boot("kstorage_init done: %d\n", rc);
 
-    rc = kpextension_init();
-    log_boot("kpextension_init done: %d\n", rc);
+    // rc = kpextension_init();
+    // log_boot("kpextension_init done: %d\n", rc);
 
     rc = resolve_pt_regs();
     log_boot("resolve_pt_regs done: %d\n", rc);
