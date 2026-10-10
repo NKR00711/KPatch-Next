@@ -70,8 +70,8 @@ static void before_rest_init(hook_fargs4_t *args, void *udata)
     if ((rc = task_observer())) goto out;
     log_boot("task_observer done: %d\n", rc);
 
-    // rc = supercall_install();
-    // log_boot("supercall_install done: %d\n", rc);
+    rc = supercall_install();
+    log_boot("supercall_install done: %d\n", rc);
 
     rc = kstorage_init();
     log_boot("kstorage_init done: %d\n", rc);
@@ -82,8 +82,8 @@ static void before_rest_init(hook_fargs4_t *args, void *udata)
     rc = resolve_pt_regs();
     log_boot("resolve_pt_regs done: %d\n", rc);
 
-    rc = rehook_init();
-    log_boot("rehook_init done: %d\n", rc);
+    // rc = rehook_init();
+    // log_boot("rehook_init done: %d\n", rc);
 
 out:
     return;
